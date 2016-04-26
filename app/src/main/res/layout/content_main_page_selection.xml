@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jhoang.mysqldemo.MainPageSelectionActivity"
+    tools:showIn="@layout/activity_main_page_selection">
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Music"
+        android:id="@+id/btnMusic"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coordinate Sheets"
+        android:id="@+id/btnCoordinate"
+        android:layout_below="@+id/btnMusic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/btnMusic"
+        android:layout_alignEnd="@+id/btnMusic" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Music Book"
+        android:id="@+id/button_editmusicbook"
+        android:layout_below="@+id/btnCoordinate"
+        android:layout_alignRight="@+id/btnCoordinate"
+        android:layout_alignEnd="@+id/btnCoordinate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Music Mvt"
+        android:id="@+id/button_editmusicmvt"
+        android:layout_below="@+id/button_editmusicbook"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button_editmusicbook"
+        android:layout_alignEnd="@+id/button_editmusicbook" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Coordinate Book"
+        android:id="@+id/button_editcoordinatebook"
+        android:layout_below="@+id/button_editmusicmvt"
+        android:layout_alignRight="@+id/button_editmusicmvt"
+        android:layout_alignEnd="@+id/button_editmusicmvt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Coordinate Sheet"
+        android:id="@+id/button_editcoordinatesheet"
+        android:layout_below="@+id/button_editcoordinatebook"
+        android:layout_alignRight="@+id/button_editcoordinatebook"
+        android:layout_alignEnd="@+id/button_editcoordinatebook"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music Book"
+        android:id="@+id/button_musicbook"
+        android:layout_below="@+id/button_editcoordinatesheet"
+        android:layout_alignRight="@+id/button_editcoordinatesheet"
+        android:layout_alignEnd="@+id/button_editcoordinatesheet"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coordinate Book"
+        android:id="@+id/button_coordinatebook"
+        android:layout_below="@+id/button_musicbook"
+        android:layout_alignRight="@+id/button_editcoordinatesheet"
+        android:layout_alignEnd="@+id/button_editcoordinatesheet"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
