@@ -1,24 +1,19 @@
 package com.example.jhoang.mysqldemo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 
 
 public class MainActivity extends AppCompatActivity {
 
     EditText UsernameEt, PasswordEt;
+    private static Button btnAddTeacher;
     NotificationCompat.Builder notification;
     private static final int EmarchingID = 174901;
 
@@ -27,12 +22,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         UsernameEt = (EditText)findViewById(R.id.etUsername);
         PasswordEt = (EditText)findViewById(R.id.etPassword);
 
         notification = new NotificationCompat.Builder(this);
         notification.setAutoCancel(true);
 
+        OnClickButtonListener();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+    }
+
+    public void OnClickButtonListener() {
+        btnAddTeacher = (Button) findViewById(R.id.btnAddTeacher);
+        btnAddTeacher.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(MainActivity.this, AddTeacher.class);
+                        startActivity(intent);
+                    }
+                }
+        );
     }
 
     public void OnLogin(View view){

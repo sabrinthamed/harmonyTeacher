@@ -1,20 +1,16 @@
 package com.example.jhoang.mysqldemo;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 
 public class Coordinate_BookList extends Activity {
 
@@ -52,6 +48,14 @@ public class Coordinate_BookList extends Activity {
         OnClickButtonListener();
         //buttonAdd.setOnClickListener(buttonAddOnClickListener);
         //buttonDeleteAll.setOnClickListener(buttonDeleteAllOnClickListener);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 

@@ -3,7 +3,6 @@ package com.example.jhoang.mysqldemo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -21,6 +20,7 @@ public class MainPageSelectionActivity extends AppCompatActivity {
     private static Button btneditcoordinatesheet;
     private static Button btnMusicBook;
     private static Button btnCoordinateBook;
+    private static Button btnStudentsList;
 
     String username;
     String password;
@@ -42,10 +42,10 @@ public class MainPageSelectionActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                finish();
             }
         });
+
     }
 
     public void OnClickButtonListener() {
@@ -135,6 +135,19 @@ public class MainPageSelectionActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v){
                         Intent intent = new Intent("com.example.jhoang.mysqldemo.Coordinate_BookList");
+                        startActivity(intent);
+                    }
+                }
+        );
+
+        btnStudentsList = (Button)findViewById(R.id.btnStudentsList);
+        btnStudentsList.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Intent intent = new Intent(MainPageSelectionActivity.this, StudentsList.class);
+                        intent.putExtra("username", username);
+                        intent.putExtra("password", password);
                         startActivity(intent);
                     }
                 }

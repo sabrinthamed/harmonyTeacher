@@ -201,6 +201,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".StudentsList"></activity>
+
+        <activity android:name=".AddStudents"></activity>
+
+        <activity android:name=".AddTeacher"></activity>
+
+        <activity android:name=".DetailActivity"></activity>
+
+
     </application>
 
 </manifest>

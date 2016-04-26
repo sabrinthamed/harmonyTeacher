@@ -3,6 +3,7 @@ package com.example.jhoang.mysqldemo;
 import android.app.AlertDialog;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -37,6 +38,14 @@ public class Coordinate_SetActivity extends AppCompatActivity {
         viewAll();
         UpdateData();
         DeleteData();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
     public void DeleteData(){
         btnDelete.setOnClickListener(

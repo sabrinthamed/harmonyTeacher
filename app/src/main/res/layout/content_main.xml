@@ -49,4 +49,11 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/textView" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Teacher"
+        android:id="@+id/btnAddTeacher"
+        android:layout_below="@+id/btnLogin"/>
 </RelativeLayout>
