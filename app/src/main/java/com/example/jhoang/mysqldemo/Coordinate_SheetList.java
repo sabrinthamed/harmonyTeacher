@@ -124,7 +124,7 @@ public class Coordinate_SheetList extends Activity {
             String item_content1 = cursor.getString(cursor.getColumnIndex(Coordinate_SheetAdapter.KEY_CONTENT1));
             String item_content2 = cursor.getString(cursor.getColumnIndex(Coordinate_SheetAdapter.KEY_CONTENT2));
             String item_content3 = cursor.getString(cursor.getColumnIndex(Coordinate_SheetAdapter.KEY_CONTENT3));
-            Intent intent = new Intent("com.example.jhoang.mysqldemo.Coordinate_SetList");
+            Intent intent = new Intent("com.example.jhoang.mysqldemo.CoordinateSelectionActivity");
             intent.putExtra("STRING_I_NEED",item_content1);
             intent.putExtra("STRING_I_NEED1",item_content3);
             startActivity(intent);

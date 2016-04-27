@@ -49,76 +49,14 @@ public class MainPageSelectionActivity extends AppCompatActivity {
     }
 
     public void OnClickButtonListener() {
-        btnMusic = (Button)findViewById(R.id.btnMusic);
-        btnCoordinate = (Button)findViewById(R.id.btnCoordinate);
-        btneditmusicbook = (Button)findViewById(R.id.button_editmusicbook);
-        btneditmusicmvt = (Button)findViewById(R.id.button_editmusicmvt);
-        btneditcoordinatebook = (Button)findViewById(R.id.button_editcoordinatebook);
-        btneditcoordinatesheet =(Button)findViewById(R.id.button_editcoordinatesheet);
+       // btnMusic = (Button)findViewById(R.id.btnMusic);
+      //  btnCoordinate = (Button)findViewById(R.id.btnCoordinate);
+     //   btneditmusicbook = (Button)findViewById(R.id.button_editmusicbook);
+     //   btneditmusicmvt = (Button)findViewById(R.id.button_editmusicmvt);
+    //    btneditcoordinatebook = (Button)findViewById(R.id.button_editcoordinatebook);
+     //   btneditcoordinatesheet =(Button)findViewById(R.id.button_editcoordinatesheet);
         btnMusicBook = (Button)findViewById(R.id.button_musicbook);
         btnCoordinateBook = (Button)findViewById(R.id.button_coordinatebook);
-        btnMusic.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent("com.example.jhoang.mysqldemo.MusicSelectionActivity");
-                        intent.putExtra("username", username);
-                        intent.putExtra("password", password);
-                        startActivity(intent);
-                    }
-                }
-        );
-        btnCoordinate.setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v){
-                        Intent intent = new Intent("com.example.jhoang.mysqldemo.CoordinateSelectionActivity");
-                        intent.putExtra("username", username);
-                        intent.putExtra("password", password);
-                        startActivity(intent);
-                    }
-                }
-        );
-
-
-        btneditmusicbook.setOnClickListener(
-                new View.OnClickListener(){
-                        @Override
-                        public void onClick(View v){
-                            Intent intent = new Intent("com.example.jhoang.mysqldemo.Music_BookActivity");
-                            startActivity(intent);
-                        }
-                    }
-            );
-        btneditmusicmvt.setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v){
-                        Intent intent = new Intent("com.example.jhoang.mysqldemo.Music_MvtActivity");
-                        startActivity(intent);
-                    }
-                }
-        );
-
-        btneditcoordinatebook.setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v){
-                        Intent intent = new Intent("com.example.jhoang.mysqldemo.Coordinate_BookActivity");
-                        startActivity(intent);
-                    }
-                }
-        );
-
-        btneditcoordinatesheet.setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v){
-                        Intent intent = new Intent("com.example.jhoang.mysqldemo.Coordinate_SheetActivity");
-                        startActivity(intent);
-                    }
-                }
-        );
 
         btnMusicBook.setOnClickListener(
                 new View.OnClickListener(){
