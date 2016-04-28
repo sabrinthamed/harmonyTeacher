@@ -144,20 +144,36 @@ public class MusicSelectionActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.switchMain)
-        {
-            Intent switchIntent = new Intent("com.example.jhoang.mysqldemo.CoordinateSelectionActivity");
-            switchIntent.putExtra("username", username);
-            switchIntent.putExtra("password", password);
-            startActivity(switchIntent);
-        }
-        else if (id == R.id.notification)
-        {
-            Intent notifyIntent = new Intent(MusicSelectionActivity.this, RecyclerViewList.class);
-            notifyIntent.putExtra("username", username);
-            notifyIntent.putExtra("password", password);
-            startActivity(notifyIntent);
+        switch(item.getItemId()) {
+            case R.id.switchMain:
+                Intent switchIntent = new Intent("com.example.jhoang.mysqldemo.Coordinate_BookList");
+                switchIntent.putExtra("username", username);
+                switchIntent.putExtra("password", password);
+                startActivity(switchIntent);
+                break;
+
+            case R.id.notification:
+                Intent notifyIntent = new Intent(MusicSelectionActivity.this, RecyclerViewList.class);
+                notifyIntent.putExtra("username", username);
+                notifyIntent.putExtra("password", password);
+                startActivity(notifyIntent);
+                break;
+
+            case R.id.notificationSend:
+                Intent notifySend = new Intent("com.example.jhoang.mysqldemo.NotificationActivity");
+                notifySend.putExtra("username", username);
+                notifySend.putExtra("password", password);
+                startActivity(notifySend);
+                break;
+
+            case R.id.logout:
+                String type = "logout";
+                BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+                backgroundWorker.execute(type, username, password);
+                break;
+
+            default:
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

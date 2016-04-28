@@ -135,7 +135,7 @@ public class CoordinateSelectionActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_coordinate, menu);
+        menuInflater.inflate(R.menu.menu_music, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -144,17 +144,30 @@ public class CoordinateSelectionActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.switchMain:
-                Intent switchIntent = new Intent("com.example.jhoang.mysqldemo.MusicSelectionActivity");
+                Intent switchIntent = new Intent("com.example.jhoang.mysqldemo.Music_BookList");
                 switchIntent.putExtra("username", username);
                 switchIntent.putExtra("password", password);
                 startActivity(switchIntent);
                 break;
 
             case R.id.notification:
-                Intent notifyIntent = new Intent("com.example.jhoang.mysqldemo.NotificationActivity");
+                Intent notifyIntent = new Intent(CoordinateSelectionActivity.this, RecyclerViewList.class);
                 notifyIntent.putExtra("username", username);
                 notifyIntent.putExtra("password", password);
                 startActivity(notifyIntent);
+                break;
+
+            case R.id.notificationSend:
+                Intent notifySend = new Intent("com.example.jhoang.mysqldemo.NotificationActivity");
+                notifySend.putExtra("username", username);
+                notifySend.putExtra("password", password);
+                startActivity(notifySend);
+                break;
+
+            case R.id.logout:
+                String type = "logout";
+                BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+                backgroundWorker.execute(type, username, password);
                 break;
 
             default:

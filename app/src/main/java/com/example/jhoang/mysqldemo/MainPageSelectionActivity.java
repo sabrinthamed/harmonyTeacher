@@ -63,6 +63,8 @@ public class MainPageSelectionActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v){
                         Intent intent = new Intent("com.example.jhoang.mysqldemo.Music_BookList");
+                        intent.putExtra("username", username);
+                        intent.putExtra("password", password);
                         startActivity(intent);
                     }
                 }
@@ -73,6 +75,8 @@ public class MainPageSelectionActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v){
                         Intent intent = new Intent("com.example.jhoang.mysqldemo.Coordinate_BookList");
+                        intent.putExtra("username", username);
+                        intent.putExtra("password", password);
                         startActivity(intent);
                     }
                 }
@@ -104,10 +108,16 @@ public class MainPageSelectionActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.notification:
-                Intent notifyIntent = new Intent("com.example.jhoang.mysqldemo.NotificationActivity");
+                Intent notifyIntent = new Intent(MainPageSelectionActivity.this, RecyclerViewList.class);
                 notifyIntent.putExtra("username", username);
                 notifyIntent.putExtra("password", password);
                 startActivity(notifyIntent);
+                break;
+            case R.id.notificationSend:
+                Intent notifySend = new Intent("com.example.jhoang.mysqldemo.NotificationActivity");
+                notifySend.putExtra("username", username);
+                notifySend.putExtra("password", password);
+                startActivity(notifySend);
                 break;
             case R.id.logout:
                 String type = "logout";

@@ -1,10 +1,15 @@
 package com.example.jhoang.mysqldemo;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,10 +24,21 @@ public class Music_MvtActivity extends AppCompatActivity {
     Button btnviewAll;
     Button btnDelete;
     Button btnviewUpdate;
+    String username;
+    String password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music__mvt);
+
+        Intent extraIntent = getIntent();
+        username = extraIntent.getStringExtra("username");
+        password = extraIntent.getStringExtra("password");
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         myDb = new Music_MvtDatabaseHelper(this);
 
         editMvtNum = (EditText)findViewById(R.id.editText_MvtNumber);
@@ -37,15 +53,52 @@ public class Music_MvtActivity extends AppCompatActivity {
         viewAll();
         UpdateData();
         DeleteData();
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_music, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.switchMain:
+                Intent switchIntent = new Intent("com.example.jhoang.mysqldemo.Coordinate_BookList");
+                switchIntent.putExtra("username", username);
+                switchIntent.putExtra("password", password);
+                startActivity(switchIntent);
+                break;
+
+            case R.id.notification:
+                Intent notifyIntent = new Intent(Music_MvtActivity.this, RecyclerViewList.class);
+                notifyIntent.putExtra("username", username);
+                notifyIntent.putExtra("password", password);
+                startActivity(notifyIntent);
+                break;
+
+            case R.id.notificationSend:
+                Intent notifySend = new Intent("com.example.jhoang.mysqldemo.NotificationActivity");
+                notifySend.putExtra("username", username);
+                notifySend.putExtra("password", password);
+                startActivity(notifySend);
+                break;
+
+            case R.id.logout:
+                String type = "logout";
+                BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+                backgroundWorker.execute(type, username, password);
+                break;
+
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public void DeleteData(){
         btnDelete.setOnClickListener(
                 new View.OnClickListener() {

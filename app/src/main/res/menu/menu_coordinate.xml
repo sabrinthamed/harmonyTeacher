@@ -2,17 +2,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.jhoang.mysqldemo.MainActivity" >
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
 
     <item android:id="@+id/logout"
         android:title="Logout"
         app:showAsAction="never" />
 
     <item android:id="@+id/notification"
-        android:title="Notifications"
+        android:title="View Notifications"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/notificationSend"
+        android:title="Send Notification"
         app:showAsAction="never" />
 
     <item android:id="@+id/metronome"
