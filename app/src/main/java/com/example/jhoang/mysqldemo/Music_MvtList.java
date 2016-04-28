@@ -87,6 +87,8 @@ public class Music_MvtList extends AppCompatActivity {
                     @Override
                     public void onClick(View v){
                         Intent intent = new Intent("com.example.jhoang.mysqldemo.Music_MvtActivity");
+                        intent.putExtra("username", username);
+                        intent.putExtra("password", password);
                         startActivity(intent);
                     }
                 }
@@ -178,6 +180,8 @@ public class Music_MvtList extends AppCompatActivity {
             String item_content3 = cursor.getString(cursor.getColumnIndex(Music_MvtAdapter.KEY_CONTENT3));
             String item_content4 = cursor.getString(cursor.getColumnIndex(Music_MvtAdapter.KEY_CONTENT4));
             Intent intent = new Intent("com.example.jhoang.mysqldemo.MusicSelectionActivity");
+            intent.putExtra("username", username);
+            intent.putExtra("password", password);
             intent.putExtra("STRING_I_NEED",item_content1);
             intent.putExtra("STRING_I_NEED1",item_content4);
             startActivity(intent);

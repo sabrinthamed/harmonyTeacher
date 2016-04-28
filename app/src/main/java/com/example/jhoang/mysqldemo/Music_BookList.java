@@ -75,6 +75,8 @@ public class Music_BookList extends AppCompatActivity {
                     @Override
                     public void onClick(View v){
                         Intent intent = new Intent("com.example.jhoang.mysqldemo.Music_BookActivity");
+                        intent.putExtra("username", username);
+                        intent.putExtra("password", password);
                         startActivity(intent);
                     }
                 }
@@ -165,6 +167,8 @@ public class Music_BookList extends AppCompatActivity {
             String item_content2 = cursor.getString(cursor.getColumnIndex(Music_BookAdapter.KEY_CONTENT2));
             String item_content3 = cursor.getString(cursor.getColumnIndex(Music_BookAdapter.KEY_CONTENT3));
             Intent intent = new Intent("com.example.jhoang.mysqldemo.Music_MvtList");
+            intent.putExtra("username", username);
+            intent.putExtra("password", password);
             intent.putExtra("STRING_I_NEED",item_content1);
             startActivity(intent);
 
