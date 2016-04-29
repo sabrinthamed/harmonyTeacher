@@ -28,6 +28,7 @@ public class Music_MvtList extends AppCompatActivity {
     SimpleCursorAdapter cursorAdapter;
     Cursor cursor;
     String select;
+    private static Button btnrefresh;
     String username;
     String password;
 
@@ -93,6 +94,20 @@ public class Music_MvtList extends AppCompatActivity {
                     }
                 }
         );
+
+        btnrefresh = (Button)findViewById(R.id.refresh);
+        btnrefresh.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent resume = getIntent();
+                        resume.putExtra("username", username);
+                        resume.putExtra("password", password);
+                        finish();
+                        startActivity(resume);
+                    }
+                }
+        );
     }
 
     @Override
@@ -137,6 +152,13 @@ public class Music_MvtList extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume()
+    {  // After a pause OR at startup
+        super.onResume();
+        //Refresh your stuff here
     }
 
   /*  Button.OnClickListener buttonAddOnClickListener

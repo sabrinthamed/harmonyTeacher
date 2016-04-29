@@ -27,7 +27,7 @@ public class Music_BookList extends AppCompatActivity {
 
     String username;
     String password;
-
+    private static Button btnrefresh;
     SimpleCursorAdapter cursorAdapter;
     Cursor cursor;
 
@@ -78,6 +78,20 @@ public class Music_BookList extends AppCompatActivity {
                         intent.putExtra("username", username);
                         intent.putExtra("password", password);
                         startActivity(intent);
+                    }
+                }
+        );
+
+        btnrefresh = (Button)findViewById(R.id.refresh);
+        btnrefresh.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent resume = getIntent();
+                        resume.putExtra("username", username);
+                        resume.putExtra("password", password);
+                        finish();
+                        startActivity(resume);
                     }
                 }
         );

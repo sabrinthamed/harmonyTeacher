@@ -53,6 +53,13 @@ public class RecyclerViewList extends AppCompatActivity {
                 startActivity(notifyIntent);
                 break;
 
+            case R.id.notificationSend:
+                Intent notifySend = new Intent("com.example.jhoang.mysqldemo.NotificationActivity");
+                notifySend.putExtra("username", username);
+                notifySend.putExtra("password", password);
+                startActivity(notifySend);
+                break;
+
             case R.id.logout:
                 String type = "logout";
                 BackgroundWorker backgroundWorker = new BackgroundWorker(this);
@@ -63,5 +70,12 @@ public class RecyclerViewList extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume()
+    {  // After a pause OR at startup
+        super.onResume();
+        //Refresh your stuff here
     }
 }
