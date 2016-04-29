@@ -57,6 +57,7 @@ public class MainPageSelectionActivity extends AppCompatActivity {
      //   btneditcoordinatesheet =(Button)findViewById(R.id.button_editcoordinatesheet);
         btnMusicBook = (Button)findViewById(R.id.button_musicbook);
         btnCoordinateBook = (Button)findViewById(R.id.button_coordinatebook);
+        btnStudentsList = (Button)findViewById(R.id.btnStudentsList);
 
         btnMusicBook.setOnClickListener(
                 new View.OnClickListener(){
@@ -82,7 +83,6 @@ public class MainPageSelectionActivity extends AppCompatActivity {
                 }
         );
 
-        btnStudentsList = (Button)findViewById(R.id.btnStudentsList);
         btnStudentsList.setOnClickListener(
                 new View.OnClickListener(){
                     @Override

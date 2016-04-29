@@ -21,15 +21,8 @@ import java.net.URLEncoder;
  */
 public class AddTeacherBackground extends AsyncTask<String,Void,String> {
 
-   // String username;
     String password;
-    String studentID;
     String name;
-    String usernamenew;
-    String passwordnew;
-   // String instrument;
-    String classes;
-    String fieldNum;
 
     Context context;
     AddTeacherBackground(Context ctx){
@@ -42,17 +35,8 @@ public class AddTeacherBackground extends AsyncTask<String,Void,String> {
         String login_url = "http://novaelite4901.com/addTeacher.php";
         if(type.equals("add")){
             try {
-                //username = params[1];
                 name = params[1];
                 password = params[2];
-                // studentID = params[3];
-
-                //usernamenew = params[4];
-               // passwordnew = params[5];
-               // instrument = params[6];
-               // classes = params[7];
-               // fieldNum = params[8];
-
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -60,17 +44,7 @@ public class AddTeacherBackground extends AsyncTask<String,Void,String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-                String post_data = (
-                       // URLEncoder.encode("username","UTF-8")+"="+URLEncoder.encode(username,"UTF-8")+"&"+
-                                URLEncoder.encode("name","UTF-8")+"="+URLEncoder.encode(name,"UTF-8")+"&"+
-                                URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")
-                                // URLEncoder.encode("studentID","UTF-8")+"="+URLEncoder.encode(studentID,"UTF-8")+"&"+
-                               // URLEncoder.encode("usernamenew","UTF-8")+"="+URLEncoder.encode(usernamenew,"UTF-8")+"&"+
-                               // URLEncoder.encode("passwordnew","UTF-8")+"="+URLEncoder.encode(passwordnew,"UTF-8")+"&"+
-                               // URLEncoder.encode("instrument","UTF-8")+"="+URLEncoder.encode(instrument,"UTF-8")+"&"+
-                               // URLEncoder.encode("classes","UTF-8")+"="+URLEncoder.encode(classes,"UTF-8")+"&"+
-                              //  URLEncoder.encode("fieldNum","UTF-8")+"="+URLEncoder.encode(fieldNum,"UTF-8")
-                                    );
+                String post_data = (URLEncoder.encode("name","UTF-8")+"="+URLEncoder.encode(name,"UTF-8")+"&"+URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8"));
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -92,7 +66,7 @@ public class AddTeacherBackground extends AsyncTask<String,Void,String> {
                 e.printStackTrace();
             }
         }
-        return null;
+        return params[1];
     }
 
     @Override

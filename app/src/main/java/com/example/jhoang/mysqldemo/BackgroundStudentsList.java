@@ -76,8 +76,8 @@ public class BackgroundStudentsList extends AsyncTask<String, MessagesStudentsLi
                 stringBuilder.append(line+"\n");
             }
             httpURLConnection.disconnect();
-            String json_string = stringBuilder.toString().trim();
-            JSONObject jsonObject = new JSONObject(json_string);
+            String json_string1 = stringBuilder.toString().trim();
+            JSONObject jsonObject = new JSONObject(json_string1);
             JSONArray jsonArray = jsonObject.getJSONArray("server_response");
             int count = 0;
             while (count < jsonArray.length())
@@ -89,7 +89,7 @@ public class BackgroundStudentsList extends AsyncTask<String, MessagesStudentsLi
                 Thread.sleep(200);
             }
 
-            Log.d("JSON STRING",json_string);
+            Log.d("JSON STRING",json_string1);
 
         } catch (MalformedURLException e) {
             e.printStackTrace();

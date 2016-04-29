@@ -29,8 +29,6 @@ public class AddStudents extends AppCompatActivity {
         username = extraIntent.getStringExtra("username");
         password = extraIntent.getStringExtra("password");
 
-       Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
       //  StudentIDET = (EditText)findViewById(R.id.etStudentID);
         NameET = (EditText)findViewById(R.id.etName);
@@ -50,7 +48,6 @@ public class AddStudents extends AppCompatActivity {
     }
 
     public void OnAddStudent(View view){
-        String StudentIDETstring = StudentIDET.getText().toString();
         String NameETstring = NameET.getText().toString();
         String UsernameETstring = UsernameET.getText().toString();
         String PasswordETstring = PasswordET.getText().toString();

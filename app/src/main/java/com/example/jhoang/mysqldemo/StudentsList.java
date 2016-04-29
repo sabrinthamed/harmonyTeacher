@@ -27,8 +27,6 @@ public class StudentsList extends AppCompatActivity {
         username = extraIntent.getStringExtra("username");
         password = extraIntent.getStringExtra("password");
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         OnClickButtonListener();
 
