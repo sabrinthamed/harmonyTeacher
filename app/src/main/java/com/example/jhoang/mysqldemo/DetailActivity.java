@@ -4,6 +4,7 @@ package com.example.jhoang.mysqldemo;
  * Created by RAFI on 4/21/2016.
  */
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -16,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +49,9 @@ public class DetailActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    String username;
+    String password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +59,10 @@ public class DetailActivity extends AppCompatActivity {
 
         CoordinatorLayout bgElement = (CoordinatorLayout) findViewById(R.id.main_content);
         bgElement.setBackgroundColor(Color.BLACK);
+
+        Intent extraIntent = getIntent();
+        username = extraIntent.getStringExtra("username");
+        password = extraIntent.getStringExtra("password");
 
      //   toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
      //   setSupportActionBar(toolbar);
@@ -105,23 +114,45 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_detail, menu);
-        return true;
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_music, menu);
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch(item.getItemId()) {
+            case R.id.switchMain:
+                Intent switchIntent = new Intent("com.example.jhoang.mysqldemo.Music_BookList");
+                switchIntent.putExtra("username", username);
+                switchIntent.putExtra("password", password);
+                startActivity(switchIntent);
+                break;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            case R.id.notification:
+                Intent notifyIntent = new Intent(DetailActivity.this, RecyclerViewList.class);
+                notifyIntent.putExtra("username", username);
+                notifyIntent.putExtra("password", password);
+                startActivity(notifyIntent);
+                break;
+
+            case R.id.notificationSend:
+                Intent notifySend = new Intent("com.example.jhoang.mysqldemo.NotificationActivity");
+                notifySend.putExtra("username", username);
+                notifySend.putExtra("password", password);
+                startActivity(notifySend);
+                break;
+
+            case R.id.logout:
+                String type = "logout";
+                BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+                backgroundWorker.execute(type, username, password);
+                break;
+
+            default:
+                break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
