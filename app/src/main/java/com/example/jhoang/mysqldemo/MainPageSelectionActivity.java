@@ -30,11 +30,15 @@ public class MainPageSelectionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page_selection);
 
+     //   CoordinatorLayout bgElement = (CoordinatorLayout) findViewById(R.id.main_content);
+      //  bgElement.setBackgroundColor(Color.);
+
         Intent extraIntent = getIntent();
         username = extraIntent.getStringExtra("username");
         password = extraIntent.getStringExtra("password");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Main Page");
         setSupportActionBar(toolbar);
         OnClickButtonListener();
 

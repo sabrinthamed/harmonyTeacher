@@ -49,7 +49,8 @@
         android:id="@+id/editText_FieldNum"
         android:layout_alignTop="@+id/textView"
         android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:layout_toEndOf="@+id/textView"
+        android:background="@drawable/edittextstyle"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -57,7 +58,8 @@
         android:id="@+id/editText_Instrument"
         android:layout_alignTop="@+id/textView2"
         android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
+        android:layout_toEndOf="@+id/textView2"
+        android:background="@drawable/edittextstyle"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -65,7 +67,8 @@
         android:id="@+id/editText_ShowId"
         android:layout_alignTop="@+id/textView3"
         android:layout_toRightOf="@+id/textView3"
-        android:layout_toEndOf="@+id/textView3" />
+        android:layout_toEndOf="@+id/textView3"
+        android:background="@drawable/edittextstyle"/>
 
 
     <Button
@@ -75,7 +78,10 @@
         android:id="@+id/button_add"
         android:layout_below="@+id/editText_ShowId"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@drawable/border"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
 
 
     <Button
@@ -85,7 +91,10 @@
         android:id="@+id/button_viewAll"
         android:layout_alignBottom="@+id/button_add"
         android:layout_toRightOf="@+id/button_add"
-        android:layout_toEndOf="@+id/button_add" />
+        android:layout_toEndOf="@+id/button_add"
+        android:background="@drawable/border"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -94,7 +103,10 @@
         android:id="@+id/button_update"
         android:layout_below="@+id/button_add"
         android:layout_alignLeft="@+id/button_add"
-        android:layout_alignStart="@+id/button_add" />
+        android:layout_alignStart="@+id/button_add"
+        android:background="@drawable/border"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -103,6 +115,9 @@
         android:id="@+id/button_delete"
         android:layout_below="@+id/button_add"
         android:layout_toRightOf="@+id/button_add"
-        android:layout_toEndOf="@+id/button_add" />
+        android:layout_toEndOf="@+id/button_add"
+        android:background="@drawable/border"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
 
 </RelativeLayout>

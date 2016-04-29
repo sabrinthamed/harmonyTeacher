@@ -34,7 +34,8 @@
         android:id="@+id/etName"
         android:layout_marginTop="10dp"
         android:maxLength="200"
-        android:layout_below="@+id/tvName" />
+        android:layout_below="@+id/tvName"
+        android:background="@drawable/edittextstyle"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,7 +55,8 @@
         android:id="@+id/etUsername"
         android:layout_marginTop="10dp"
         android:maxLength="200"
-        android:layout_below="@+id/tvUsername" />
+        android:layout_below="@+id/tvUsername"
+        android:background="@drawable/edittextstyle"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,7 +76,8 @@
         android:id="@+id/etPassword"
         android:layout_marginTop="10dp"
         android:maxLength="200"
-        android:layout_below="@+id/tvPassword" />
+        android:layout_below="@+id/tvPassword"
+        android:background="@drawable/edittextstyle"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -94,7 +97,8 @@
         android:id="@+id/etInstrument"
         android:layout_marginTop="10dp"
         android:maxLength="200"
-        android:layout_below="@+id/tvInstrument" />
+        android:layout_below="@+id/tvInstrument"
+        android:background="@drawable/edittextstyle"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -114,7 +118,8 @@
         android:id="@+id/etCLass"
         android:layout_marginTop="10dp"
         android:maxLength="200"
-        android:layout_below="@+id/tvClass" />
+        android:layout_below="@+id/tvClass"
+        android:background="@drawable/edittextstyle"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -134,7 +139,8 @@
         android:id="@+id/etFieldNumber"
         android:layout_marginTop="10dp"
         android:maxLength="200"
-        android:layout_below="@+id/tvFieldNumber" />
+        android:layout_below="@+id/tvFieldNumber"
+        android:background="@drawable/edittextstyle"/>
 
     <Button
         android:layout_width="fill_parent"
@@ -143,7 +149,11 @@
         android:id="@+id/btnAddStudent"
         android:onClick="OnAddStudent"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/etFieldNumber" />
+        android:layout_below="@+id/etFieldNumber"
+        android:background="@drawable/border"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
 
 </RelativeLayout>
     </ScrollView>

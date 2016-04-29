@@ -38,6 +38,14 @@ public class Coordinate_SheetActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         myDb = new Coordinate_SheetDatabaseHelper(this);
         editFieldNum = (EditText)findViewById(R.id.editText_FieldNum);
         editInstrument = (EditText)findViewById(R.id.editText_Instrument);

@@ -31,7 +31,8 @@
             android:id="@+id/etNameTeacher"
             android:layout_marginTop="10dp"
             android:maxLength="200"
-            android:layout_below="@+id/tvNameTeacher" />
+            android:layout_below="@+id/tvNameTeacher"
+            android:background="@drawable/edittextstyle"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,7 +52,8 @@
             android:id="@+id/etPasswordTeacher"
             android:layout_marginTop="10dp"
             android:maxLength="200"
-            android:layout_below="@+id/tvPasswordTeacher" />
+            android:layout_below="@+id/tvPasswordTeacher"
+            android:background="@drawable/edittextstyle"/>
 
         <Button
             android:layout_width="fill_parent"
@@ -60,6 +62,9 @@
             android:id="@+id/btnAddTeacher"
             android:onClick="OnAddTeacher"
             android:layout_marginTop="20dp"
-            android:layout_below="@+id/etPasswordTeacher" />
+            android:layout_below="@+id/etPasswordTeacher"
+            android:background="@drawable/border"
+            android:textColor="#ffffff"
+            android:textStyle="bold"/>
 
     </RelativeLayout>

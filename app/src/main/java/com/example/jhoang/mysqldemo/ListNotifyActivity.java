@@ -1,9 +1,7 @@
 package com.example.jhoang.mysqldemo;
 
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -21,6 +19,14 @@ public class ListNotifyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_notify);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         lv = (ListView) findViewById(R.id.lvNotifications);
         lv.setAdapter(new ArrayAdapter<>(ListNotifyActivity.this, android.R.layout.simple_list_item_1, names));

@@ -21,7 +21,8 @@
         android:id="@+id/etUsername"
         android:layout_marginTop="64dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edittextstyle"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -31,7 +32,8 @@
         android:id="@+id/etPassword"
         android:layout_below="@+id/etUsername"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edittextstyle"/>
 
     <Button
         android:layout_width="fill_parent"
@@ -42,18 +44,41 @@
         android:layout_marginTop="40dp"
         android:layout_below="@+id/etPassword"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:background="@drawable/border"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView" />
+
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Add Teacher"
         android:id="@+id/btnAddTeacher"
-        android:layout_below="@+id/btnLogin"/>
+        android:layout_below="@+id/btnLogin"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:background="@drawable/border"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Username:"
+        android:id="@+id/textView8"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/etUsername"
+        android:layout_alignStart="@+id/etUsername"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Password:"
+        android:id="@+id/textView9"
+        android:layout_below="@+id/etUsername"
+        android:layout_alignLeft="@+id/etUsername"
+        android:layout_alignStart="@+id/etUsername" />
 </RelativeLayout>

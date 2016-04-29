@@ -32,6 +32,14 @@ public class Coordinate_BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coordinate__book);
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         Intent extraIntent = getIntent();
         username = extraIntent.getStringExtra("username");
         password = extraIntent.getStringExtra("password");
