@@ -35,10 +35,10 @@
             android:textStyle="bold"
             />
         <Button
-            android:id="@+id/deleteall"
+            android:id="@+id/refresh"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Delete All"
+            android:text="Refresh"
             android:background="@drawable/border"
             android:textColor="#ffffff"
             android:textStyle="bold"

@@ -2,7 +2,6 @@ package com.example.jhoang.mysqldemo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Please Login");
+        toolbar.setTitle("E-Marching Band Teacher");
         setSupportActionBar(toolbar);
         OnClickButtonListener();
 
@@ -37,14 +36,6 @@ public class MainActivity extends AppCompatActivity {
         notification.setAutoCancel(true);
 
         OnClickButtonListener();
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
 
     }
 
