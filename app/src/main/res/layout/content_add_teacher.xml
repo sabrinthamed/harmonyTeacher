@@ -32,7 +32,8 @@
             android:layout_marginTop="10dp"
             android:maxLength="200"
             android:layout_below="@+id/tvNameTeacher"
-            android:background="@drawable/edittextstyle"/>
+            android:background="@drawable/edittextstyle"
+            android:paddingLeft="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,7 +54,8 @@
             android:layout_marginTop="10dp"
             android:maxLength="200"
             android:layout_below="@+id/tvPasswordTeacher"
-            android:background="@drawable/edittextstyle"/>
+            android:background="@drawable/edittextstyle"
+            android:paddingLeft="10dp"/>
 
         <Button
             android:layout_width="fill_parent"
