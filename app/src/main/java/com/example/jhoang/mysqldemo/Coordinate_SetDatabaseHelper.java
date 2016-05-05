@@ -1,8 +1,5 @@
 package com.example.jhoang.mysqldemo;
 
-/**
- * Created by chong on 4/24/2016.
- */
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;

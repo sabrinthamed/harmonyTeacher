@@ -15,8 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
-
 public class Music_MvtActivity extends AppCompatActivity {
     Music_MvtDatabaseHelper myDb;
     EditText editMvtNum, editNameOfMvt,editInstrument,editShowId;

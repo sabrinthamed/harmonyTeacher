@@ -1,10 +1,8 @@
 package com.example.jhoang.mysqldemo;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -17,9 +15,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-/**
- * Created by JHoang on 4/9/2016.
- */
 public class BackgroundNotify extends AsyncTask<String,Void,String> {
 
     String username;

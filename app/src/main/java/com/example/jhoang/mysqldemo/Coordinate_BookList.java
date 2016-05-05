@@ -12,14 +12,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
 public class Coordinate_BookList extends AppCompatActivity {
 
-    EditText inputContent1, inputContent2;
-    Button buttonAdd, buttonDeleteAll;
     private static Button btneditcoordinatebook;
     private Coordinate_BookAdapter mySQLiteAdapter;
     ListView listContent;
@@ -50,11 +47,6 @@ public class Coordinate_BookList extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //inputContent1 = (EditText)findViewById(R.id.content1);
-        //inputContent2 = (EditText)findViewById(R.id.content2);
-        //buttonAdd = (Button)findViewById(R.id.add);
-        //buttonDeleteAll = (Button)findViewById(R.id.deleteall);
-
         listContent = (ListView)findViewById(R.id.contentlist);
 
         mySQLiteAdapter = new Coordinate_BookAdapter(this);
@@ -68,9 +60,6 @@ public class Coordinate_BookList extends AppCompatActivity {
         listContent.setAdapter(cursorAdapter);
         listContent.setOnItemClickListener(listContentOnItemClickListener);
         OnClickButtonListener();
-        //buttonAdd.setOnClickListener(buttonAddOnClickListener);
-        //buttonDeleteAll.setOnClickListener(buttonDeleteAllOnClickListener);
-
     }
 
     private void OnClickButtonListener() {
@@ -153,32 +142,6 @@ public class Coordinate_BookList extends AppCompatActivity {
         //Refresh your stuff here
     }
 
-  /*  Button.OnClickListener buttonAddOnClickListener
-            = new Button.OnClickListener(){
-
-        @Override
-        public void onClick(View arg0) {
-            // TODO Auto-generated method stub
-            String data1 = inputContent1.getText().toString();
-            String data2 = inputContent2.getText().toString();
-            mySQLiteAdapter.insert(data1, data2);
-            updateList();
-        }
-
-    };*/
-
-   /* Button.OnClickListener buttonDeleteAllOnClickListener
-            = new Button.OnClickListener(){
-
-        @Override
-        public void onClick(View arg0) {
-            // TODO Auto-generated method stub
-            mySQLiteAdapter.deleteAll();
-            updateList();
-        }
-
-    };*/
-
     private ListView.OnItemClickListener listContentOnItemClickListener
             = new ListView.OnItemClickListener() {
 
@@ -199,65 +162,6 @@ public class Coordinate_BookList extends AppCompatActivity {
             startActivity(intent);
         }
     };
-           /* AlertDialog.Builder myDialog
-                    = new AlertDialog.Builder(Coordinate_BookList.this);
-
-            myDialog.setTitle("Delete/Edit?");
-
-            TextView dialogTxt_id = new TextView(AndroidSQLite.this);
-            LayoutParams dialogTxt_idLayoutParams
-                    = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-            dialogTxt_id.setLayoutParams(dialogTxt_idLayoutParams);
-            dialogTxt_id.setText("#" + String.valueOf(item_id));
-
-            final EditText dialogC1_id = new EditText(AndroidSQLite.this);
-            LayoutParams dialogC1_idLayoutParams
-                    = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-            dialogC1_id.setLayoutParams(dialogC1_idLayoutParams);
-            dialogC1_id.setText(item_content1);
-
-            final EditText dialogC2_id = new EditText(AndroidSQLite.this);
-            LayoutParams dialogC2_idLayoutParams
-                    = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
-            dialogC2_id.setLayoutParams(dialogC2_idLayoutParams);
-            dialogC2_id.setText(item_content2);
-
-            LinearLayout layout = new LinearLayout(AndroidSQLite.this);
-            layout.setOrientation(LinearLayout.VERTICAL);
-            layout.addView(dialogTxt_id);
-            layout.addView(dialogC1_id);
-            layout.addView(dialogC2_id);
-            myDialog.setView(layout);
-
-            myDialog.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-                // do something when the button is clicked
-                public void onClick(DialogInterface arg0, int arg1) {
-                    mySQLiteAdapter.delete_byID(item_id);
-                    updateList();
-                }
-            });
-
-            myDialog.setNeutralButton("Update", new DialogInterface.OnClickListener() {
-                // do something when the button is clicked
-                public void onClick(DialogInterface arg0, int arg1) {
-                    String value1 = dialogC1_id.getText().toString();
-                    String value2 = dialogC2_id.getText().toString();
-                    mySQLiteAdapter.update_byID(item_id, value1, value2);
-                    updateList();
-                }
-            });
-
-            myDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                // do something when the button is clicked
-                public void onClick(DialogInterface arg0, int arg1) {
-
-                }
-            });
-
-            myDialog.show();
-
-
-        }};*/
 
     @Override
     protected void onDestroy() {
@@ -266,10 +170,7 @@ public class Coordinate_BookList extends AppCompatActivity {
         mySQLiteAdapter.close();
     }
 
-
-
     private void updateList(){
         cursor.requery();
     }
-
 }

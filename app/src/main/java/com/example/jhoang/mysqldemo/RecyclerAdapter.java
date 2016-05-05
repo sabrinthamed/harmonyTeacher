@@ -1,6 +1,5 @@
 package com.example.jhoang.mysqldemo;
 
-import android.os.Message;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +8,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by JHoang on 4/10/2016.
- */
 public class RecyclerAdapter extends RecyclerView.Adapter <RecyclerAdapter.RecyclerViewHolder>{
 
     private static final int TYPE_HEAD = 0;
@@ -49,7 +45,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter <RecyclerAdapter.Recyc
             holder.Name.setText(messages.getName());
             holder.Message.setText(messages.getMessage());
         }
-
     }
 
     @Override
@@ -87,6 +82,5 @@ public class RecyclerAdapter extends RecyclerView.Adapter <RecyclerAdapter.Recyc
         {
             return  TYPE_LIST;
         }
-
     }
 }

@@ -5,12 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 public class Music_BookDatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Music_Book.db";
     public static final String TABLE_NAME = "MUSICBOOK_TABLE";
-    public static final int MYDATABASE_VERSION = 1;
     public static final String COL_1 = "SHOWID";
     public static final String COL_2 = "SHOWNAME";
     public static final String COL_3 = "NUMMVTS";

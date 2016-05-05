@@ -189,5 +189,4 @@ public class Coordinate_SheetActivity extends AppCompatActivity {
         builder.setMessage(Message);
         builder.show();
     }
-
 }

@@ -44,10 +44,5 @@ public class Music_Sheet extends AppCompatActivity {
         } else {
             ShowId= (String) savedInstanceState.getSerializable("STRING_I_NEED1");
         }
-
-
-
     }
-
-
 }

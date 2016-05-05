@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -17,15 +16,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-/**
- * Created by JHoang on 2/29/2016.
- */
 public class BackgroundWorker extends AsyncTask<String,Void,String> {
 
     String user_name;
     String password;
     String loginsucess="login success!!!!! Welcome user!";
-    String loginfailure="login not successful...";
+    String loginfailure="Loggin unsuccessful...";
     String logout="logged out";
     Context context;
     BackgroundWorker(Context ctx){

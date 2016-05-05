@@ -1,20 +1,13 @@
 package com.example.jhoang.mysqldemo;
 
-/**
- * Created by RAFI on 4/21/2016.
- */
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by Suleiman19 on 10/22/15.
- */
 public class ImageModel implements Parcelable {
 
     String name, url;
 
     public ImageModel() {
-
     }
 
     protected ImageModel(Parcel in) {

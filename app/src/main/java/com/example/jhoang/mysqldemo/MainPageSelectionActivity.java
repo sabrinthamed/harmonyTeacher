@@ -12,12 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainPageSelectionActivity extends AppCompatActivity {
-    private static Button btnMusic;
-    private static Button btnCoordinate;
-    private static Button btneditmusicbook;
-    private static Button btneditmusicmvt;
-    private static Button btneditcoordinatebook;
-    private static Button btneditcoordinatesheet;
+
     private static Button btnMusicBook;
     private static Button btnCoordinateBook;
     private static Button btnStudentsList;
@@ -29,9 +24,6 @@ public class MainPageSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page_selection);
-
-     //   CoordinatorLayout bgElement = (CoordinatorLayout) findViewById(R.id.main_content);
-      //  bgElement.setBackgroundColor(Color.);
 
         Intent extraIntent = getIntent();
         username = extraIntent.getStringExtra("username");
@@ -53,12 +45,7 @@ public class MainPageSelectionActivity extends AppCompatActivity {
     }
 
     public void OnClickButtonListener() {
-       // btnMusic = (Button)findViewById(R.id.btnMusic);
-      //  btnCoordinate = (Button)findViewById(R.id.btnCoordinate);
-     //   btneditmusicbook = (Button)findViewById(R.id.button_editmusicbook);
-     //   btneditmusicmvt = (Button)findViewById(R.id.button_editmusicmvt);
-    //    btneditcoordinatebook = (Button)findViewById(R.id.button_editcoordinatebook);
-     //   btneditcoordinatesheet =(Button)findViewById(R.id.button_editcoordinatesheet);
+
         btnMusicBook = (Button)findViewById(R.id.button_musicbook);
         btnCoordinateBook = (Button)findViewById(R.id.button_coordinatebook);
         btnStudentsList = (Button)findViewById(R.id.btnStudentsList);
@@ -134,5 +121,4 @@ public class MainPageSelectionActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

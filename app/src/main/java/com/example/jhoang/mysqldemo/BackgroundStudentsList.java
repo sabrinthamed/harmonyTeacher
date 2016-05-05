@@ -7,11 +7,9 @@ import android.os.AsyncTask;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,9 +19,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-/**
- * Created by JHoang on 4/10/2016.
- */
 public class BackgroundStudentsList extends AsyncTask<String, MessagesStudentsList, Void> {
     Context ctx;
     Activity activity;
@@ -66,7 +61,6 @@ public class BackgroundStudentsList extends AsyncTask<String, MessagesStudentsLi
             password = params[1];
             URL url = new URL(json_string);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             StringBuilder stringBuilder = new StringBuilder();

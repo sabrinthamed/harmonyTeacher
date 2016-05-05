@@ -3,7 +3,6 @@ package com.example.jhoang.mysqldemo;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -16,9 +15,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-/**
- * Created by JHoang on 4/9/2016.
- */
 public class AddStudentsBackground extends AsyncTask<String,Void,String> {
 
     String username;
@@ -44,7 +40,6 @@ public class AddStudentsBackground extends AsyncTask<String,Void,String> {
             try {
                 username = params[1];
                 password = params[2];
-               // studentID = params[3];
                 name = params[3];
                 usernamenew = params[4];
                 passwordnew = params[5];

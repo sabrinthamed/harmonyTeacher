@@ -1,8 +1,5 @@
 package com.example.jhoang.mysqldemo;
 
-/**
- * Created by RAFI on 4/21/2016.
- */
 import android.support.v4.view.ViewPager;
 import android.view.View;
 

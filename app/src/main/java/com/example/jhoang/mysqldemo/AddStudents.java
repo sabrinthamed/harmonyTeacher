@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 
 public class AddStudents extends AppCompatActivity {
-    EditText StudentIDET, NameET, UsernameET, PasswordET, InstrumentET, ClassET, FieldNumET;
+    EditText NameET, UsernameET, PasswordET, InstrumentET, ClassET, FieldNumET;
     String username;
     String password;
 
@@ -27,8 +27,6 @@ public class AddStudents extends AppCompatActivity {
         username = extraIntent.getStringExtra("username");
         password = extraIntent.getStringExtra("password");
 
-
-      //  StudentIDET = (EditText)findViewById(R.id.etStudentID);
         NameET = (EditText)findViewById(R.id.etName);
         UsernameET = (EditText)findViewById(R.id.etUsername);
         PasswordET = (EditText)findViewById(R.id.etPassword);
@@ -52,7 +50,7 @@ public class AddStudents extends AppCompatActivity {
         String InstrumentETstring = InstrumentET.getText().toString();
         String ClassETstring = ClassET.getText().toString();
         String FieldNumETstring = FieldNumET.getText().toString();
-        // Toast.makeText(context, "send", Toast.LENGTH_LONG).show();
+
         String type = "add";
         AddStudentsBackground addStudentsBackground = new AddStudentsBackground(this);
         addStudentsBackground.execute(type,username,password, NameETstring, UsernameETstring, PasswordETstring, InstrumentETstring, ClassETstring, FieldNumETstring);

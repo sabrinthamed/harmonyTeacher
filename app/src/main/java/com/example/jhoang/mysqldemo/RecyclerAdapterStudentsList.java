@@ -5,12 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
-/**
- * Created by JHoang on 4/10/2016.
- */
 public class RecyclerAdapterStudentsList extends RecyclerView.Adapter <RecyclerAdapterStudentsList.RecyclerViewHolder>{
 
     private static final int TYPE_HEAD = 0;
@@ -49,7 +45,6 @@ public class RecyclerAdapterStudentsList extends RecyclerView.Adapter <RecyclerA
             holder.FieldNum.setText(Integer.toString(messagesStudentsList.getFieldNum()));
             holder.Instrument.setText(messagesStudentsList.getInstrument());
         }
-
     }
 
     @Override
@@ -88,6 +83,5 @@ public class RecyclerAdapterStudentsList extends RecyclerView.Adapter <RecyclerA
         {
             return  TYPE_LIST;
         }
-
     }
 }

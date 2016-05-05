@@ -1,24 +1,16 @@
 package com.example.jhoang.mysqldemo;
 
-/**
- * Created by RAFI on 4/21/2016.
- */
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Suleiman19 on 10/22/15.
- */
 public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     Context context;
@@ -37,7 +29,6 @@ public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         v = LayoutInflater.from(parent.getContext()).inflate(
                 R.layout.list_item, parent, false);
         viewHolder = new MyItemHolder(v);
-
         return viewHolder;
     }
 
@@ -50,7 +41,6 @@ public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(((MyItemHolder) holder).mImg);
-
     }
 
     @Override
@@ -61,7 +51,6 @@ public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public static class MyItemHolder extends RecyclerView.ViewHolder {
         ImageView mImg;
 
-
         public MyItemHolder(View itemView) {
             super(itemView);
 
@@ -69,6 +58,4 @@ public class GalleryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
 
     }
-
-
 }

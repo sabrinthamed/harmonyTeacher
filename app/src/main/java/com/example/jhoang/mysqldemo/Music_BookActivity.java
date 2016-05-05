@@ -22,7 +22,6 @@ public class Music_BookActivity extends AppCompatActivity {
     Button btnAddData;
     Button btnviewAll;
     Button btnDelete;
-
     Button btnviewUpdate;
     String username;
     String password;
@@ -189,5 +188,4 @@ public class Music_BookActivity extends AppCompatActivity {
         builder.setMessage(Message);
         builder.show();
     }
-
 }

@@ -1,8 +1,5 @@
 package com.example.jhoang.mysqldemo;
 
-/**
- * Created by JHoang on 4/10/2016.
- */
 public class Messages {
     private String name;
     private String message;
